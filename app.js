@@ -5,19 +5,19 @@ const frontLength = frontGifs.length;
 const backLength = backGifs.length;
 
 function initialize() {
-  console.log('hi!');
+  window.setInterval(changeGifs, 4000);
 }
 
-function changeBack() {
+function changeGifs() {
   let back = document.getElementById('back-asset');
-  let nextIdx = Math.floor(Math.random() * backLength);
-
-  back.style.backgroundImage = `url("./assets/back/${backGifs[nextIdx]}")`;
-}
-
-function changeFront() {
   let front = document.getElementById('front-asset');
-  let nextIdx = Math.floor(Math.random() * frontLength);
 
-  front.style.backgroundImage = `url("./assets/front/${frontGifs[nextIdx]}")`;
+  let nextBack = Math.floor(Math.random() * backLength);
+  let nextFront = Math.floor(Math.random() * frontLength);
+
+  back.style.backgroundImage = `url("./assets/back/${backGifs[nextBack]}")`;
+  front.style.backgroundImage = `url("./assets/front/${frontGifs[nextFront]}")`;
 }
+
+window.onload = initialize();
+document.addEventListener('click', changeGifs);
