@@ -6,9 +6,6 @@ const backLength = backGifs.length;
 
 function initialize() {
   console.log('hi!');
-  fs.readdirSync('./assets/back/').forEach(file => {
-    console.log(file);
-  });
 }
 
 function changeBack() {
@@ -24,6 +21,3 @@ function changeFront() {
 
   front.style.backgroundImage = `url("./assets/front/${frontGifs[nextIdx]}")`;
 }
-
-
-window.onload = initialize();
