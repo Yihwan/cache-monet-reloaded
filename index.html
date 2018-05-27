@@ -5,13 +5,27 @@
     <title>???</title>
     <link rel="stylesheet" href="assets/normalize.css">
     <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="shortcut icon" href="assets/thinking.png">
   </head>
   <body>
 
-  <div id="back-asset"></div>
-  <div id="front-asset"></div>
+  <header>
+    <button class="audio-btn" id="mute-btn" onclick="pauseAudio()"><i class="fas fa-volume-off"></i></button>
+    <button class="audio-btn" id="play-btn" onclick="playAudio()">
+        <i class="fas fa-volume-up"></i>
+    </button>
+    <button id="info-btn"><i class="fas fa-question"></i></button>
+  </header>
 
+  <main>
+    <div id="back-asset"></div>
+    <div id="front-asset"></div>
+  </main>
+
+  <audio id="audio" src="assets/jib-kidder_windowdipper.mp3" loop="loop">
+
+  </audio>
   <script src="scripts/app.js"></script>
   </body>
 </html>

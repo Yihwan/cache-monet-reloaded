@@ -50,6 +50,10 @@ const backGifs = [
 const frontLength = frontGifs.length;
 const backLength = backGifs.length;
 
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('play-btn');
+const muteBtn = document.getElementById('mute-btn');
+
 let currentBack, currentFront;
 let nextBack, nextFront;
 
@@ -77,5 +81,23 @@ function changeGifs() {
   front.style.backgroundImage = `url("./assets/front/${frontGifs[nextFront]}")`;
 }
 
+function pauseAudio() {
+  audio.pause();
+  playBtn.style.backgroundColor = "white";
+  muteBtn.style.backgroundColor = "yellow";
+}
+
+function playAudio() {
+  audio.play();
+
+  if (![...playBtn.classList].includes('noanimation')) {
+    playBtn.classList.add('noanimation');
+  }
+
+  playBtn.style.backgroundColor = "yellow";
+  muteBtn.style.backgroundColor = "white";
+}
+
+
 window.onload = initialize();
-document.addEventListener('click', changeGifs);
+document.querySelector("main").addEventListener('click', changeGifs);

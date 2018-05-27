@@ -1,4 +1,8 @@
 
+header {
+  float: right;
+}
+
 #back-asset {
   background-image: url("./back/email.gif");
   background-repeat: round;
@@ -11,11 +15,92 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  height: 100vh;
-  width: 100vw;
+  height: 70vh;
+  width: 70vw;
 
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+header {
+  margin: 5px;
+}
+
+button {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button i {
+  margin: auto;
+  font-size: 16px;
+}
+
+/* button .emoji {
+  font-size: 20px;
+} */
+
+#play-btn {
+  background-color: yellow;
+  -webkit-animation: anim 2s, bgColor 5s;
+  animation: anim 2s, bgColor 5s;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes anim {
+    from {-webkit-transform: rotateY(0deg);}
+    to {-webkit-transform: rotateY(360deg);}
+}
+
+@keyframes anim {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+@keyframes bgColor {
+  12.5% {
+    background-color: #FF0000;
+  }
+  25% {
+    background-color: #FFA500;
+  }
+  37.5% {
+    background-color: #FFFF00;
+  }
+  50% {
+    background-color: #7FFF00;
+  }
+  62.5% {
+    background-color: #00FFFF;
+  }
+  75% {
+    background-color: #7c7cff;
+  }
+  87.5% {
+    background-color: #9932CC;
+  }
+  100% {
+    background-color: #FF1493;
+  }
+}
+
+.noanimation {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
 }
