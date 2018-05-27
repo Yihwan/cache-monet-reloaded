@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>???</title>
+    <title>cachemonet reloaded</title>
     <link rel="stylesheet" href="assets/normalize.css">
     <link rel="stylesheet" href="assets/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -15,13 +15,26 @@
     <button class="audio-btn" id="play-btn" onclick="playAudio()">
         <i class="fas fa-volume-up"></i>
     </button>
-    <button id="info-btn"><i class="fas fa-question"></i></button>
+    <button id="info-btn" onclick="toggleOverlay()"><i class="fas fa-question"></i></button>
   </header>
 
   <main>
     <div id="back-asset"></div>
     <div id="front-asset"></div>
   </main>
+
+  <div id="info">
+    <div id="info-text">
+      <p>EXPLAIN</p>
+      <p>what is this???</p>
+      <p>(do that here)</p>
+    </div>
+    <div id="btn-bar">
+      <button onclick="window.open('https://github.com/yihwan')"><i class="fab fa-github"></i></button>
+      <button onclick="window.open('https://linkedin.com/in/yihwan')"><i class="fab fa-linkedin-in"></i></button>
+      <button onclick="window.open('mailto:hi@yihwan.kim')"><i class="far fa-envelope"></i></button>
+    </div>
+  </div>
 
   <audio id="audio" src="assets/jib-kidder_windowdipper.mp3" loop="loop">
 

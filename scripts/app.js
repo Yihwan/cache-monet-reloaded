@@ -54,10 +54,15 @@ const audio = document.getElementById('audio');
 const playBtn = document.getElementById('play-btn');
 const muteBtn = document.getElementById('mute-btn');
 
+const infoBtn = document.getElementById('info-btn');
+let overlayShown = false;
+const overlay = document.getElementById('info');
+
 let currentBack, currentFront;
 let nextBack, nextFront;
 
 function initialize() {
+  changeGifs();
   window.setInterval(changeGifs, 4000);
 }
 
@@ -77,8 +82,8 @@ function changeGifs() {
 
   [currentBack, currentFront] = [nextBack, nextFront];
 
-  back.style.backgroundImage = `url("./assets/back/${backGifs[nextBack]}")`;
-  front.style.backgroundImage = `url("./assets/front/${frontGifs[nextFront]}")`;
+  back.style.backgroundImage = `url("./assets/back-classic/${backGifs[nextBack]}")`;
+  front.style.backgroundImage = `url("./assets/front-classic/${frontGifs[nextFront]}")`;
 }
 
 function pauseAudio() {
@@ -96,6 +101,19 @@ function playAudio() {
 
   playBtn.style.backgroundColor = "yellow";
   muteBtn.style.backgroundColor = "white";
+}
+
+function toggleOverlay() {
+
+  if (overlayShown == false) {
+    overlayShown = true;
+    infoBtn.innerHTML = "<i class='fas fa-times'></i>";
+    overlay.style.display = "block";
+  } else {
+    overlayShown = false;
+    infoBtn.innerHTML = "<i class='fas fa-question'></i>";
+    overlay.style.display = "none";
+  }
 }
 
 
