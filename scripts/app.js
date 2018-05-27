@@ -78,35 +78,50 @@ const backGifsClassic = [
   'xp.gif'
 ];
 
-const frontGifsReloaded = [
-  'alien.gif',
+const frontGifsReloaded = [ 'alien.gif',
   'antler.gif',
+  'avocados.gif',
+  'bw-blob.gif',
+  'cutting-knife.gif',
   'dancing-lady.gif',
   'disco.gif',
   'ditto.gif',
+  'house-fire.gif',
   'icecream.gif',
   'lacroix.gif',
   'lava.gif',
+  'melty-face.gif',
+  'newish-laptop-lg.gif',
+  'nyan-cat.gif',
   'ok-hand.gif',
-  'palm-tree.gif',
+  'pawns.gif',
+  'pickle-rick.gif',
   'pillar.gif',
   'prism.gif',
   'rainbow-squiggle.gif',
+  'rose.gif',
   'rotating-hand.gif',
   'skull.gif',
   'thinking-rotate.gif',
+  'unsalted.gif',
   'urchin.gif',
+  'vcr-monitor.gif',
   'wavy-cup.gif',
   'wavywave.gif',
-  'windows.gif'
-];
+  'windows.gif',
+  'work-life-balance.gif' ];
 
-const backGifsReloaded = [
-  'thinking-fidget.gif',
-  'ipod-classic.gif',
+const backGifsReloaded = [ 'aloe.gif',
+  'dolphin.gif',
   'flash-drive.gif',
-  'dolphin.gif'
-];
+  'ipod-classic.gif',
+  'lacroix.gif',
+  'meta-idk.gif',
+  'money-stacks.gif',
+  'nyan-cat.gif',
+  'palm-tree.gif',
+  'thinking-fidget.gif',
+'color-grid.gif' ];
 
 let overlayShown = false;
 let gifSetting = "classic";

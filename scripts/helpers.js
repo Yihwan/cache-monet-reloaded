@@ -4,17 +4,17 @@ const frontFilesClassic = './assets/front-classic/';
 const backFilesReloaded = './assets/back-reloaded/';
 const frontFilesReloaded = './assets/front-reloaded/';
 
-const backFilesArray = [];
-const frontFilesArray = [];
+const bArr = [];
+const fArr = [];
 
 fs.readdirSync(backFilesReloaded).forEach((file) => {
   if (file !== '.DS_Store') {
-    backFilesArray.push(file);
+    bArr.push(file);
   }
 });
 
 fs.readdirSync(frontFilesReloaded).forEach(file => {
   if (file !== '.DS_Store') {
-    frontFilesArray.push(file);
+    fArr.push(file);
   }
 });
