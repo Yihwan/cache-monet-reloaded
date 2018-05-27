@@ -1,3 +1,5 @@
+//--- VARIABLES ---//
+
 const frontGifsClassic = [ '14_4.gif',
   '40oz.gif',
   'bike.gif',
@@ -73,31 +75,35 @@ const backGifsClassic = [
   'xp.gif'
 ];
 
+let overlayShown = false;
+let gifSetting = "classic";
 let [frontGifs, backGifs] = [frontGifsClassic, backGifsClassic];
 
 const frontLength = frontGifs.length;
 const backLength = backGifs.length;
 
+const back = document.getElementById('back-asset');
+const front = document.getElementById('front-asset');
 const audio = document.getElementById('audio');
 const playBtn = document.getElementById('play-btn');
 const muteBtn = document.getElementById('mute-btn');
-
 const infoBtn = document.getElementById('info-btn');
-let overlayShown = false;
 const overlay = document.getElementById('info');
 
 let currentBack, currentFront;
 let nextBack, nextFront;
 
-function initialize() {
+let gifTimeInterval = 4000; // milliseconds
+
+//
+//--- FUNCTIONS ---//
+
+function startGifs() {
   changeGifs();
-  window.setInterval(changeGifs, 4000);
+  window.setInterval(changeGifs, gifTimeInterval);
 }
 
 function changeGifs() {
-  let back = document.getElementById('back-asset');
-  let front = document.getElementById('front-asset');
-
   while (true) {
     nextBack = Math.floor(Math.random() * backLength);
     if (currentBack !== nextBack) break;
@@ -110,8 +116,20 @@ function changeGifs() {
 
   [currentBack, currentFront] = [nextBack, nextFront];
 
-  back.style.backgroundImage = `url("./assets/back-classic/${backGifs[nextBack]}")`;
-  front.style.backgroundImage = `url("./assets/front-classic/${frontGifs[nextFront]}")`;
+  if (gifSetting !== "errthang") {
+    displaySingleSetting();
+  } else {
+    displayDualSetting(nextBack, nextFront);
+  }
+}
+
+function displaySingleSetting() {
+  back.style.backgroundImage = `url("./assets/back-${gifSetting}/${backGifs[nextBack]}")`;
+  front.style.backgroundImage = `url("./assets/front-${gifSetting}/${frontGifs[nextFront]}")`;
+}
+
+function displayDualSetting(displayBack, displayFront) {
+
 }
 
 function pauseAudio() {
@@ -132,7 +150,6 @@ function playAudio() {
 }
 
 function toggleOverlay() {
-
   if (overlayShown == false) {
     overlayShown = true;
     infoBtn.innerHTML = "<i class='fas fa-times'></i>";
@@ -144,6 +161,5 @@ function toggleOverlay() {
   }
 }
 
-
-window.onload = initialize();
+window.onload = startGifs();
 document.querySelector("main").addEventListener('click', changeGifs);

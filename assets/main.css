@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700');
 
+body {
+  cursor: pointer;
+}
+
 header {
   float: right;
 }
@@ -31,14 +35,17 @@ header {
 }
 
 button {
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-top: 5px;
-  margin-right: 5px;
   background-color: white;
   border: 2px solid black;
   cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.round-btn {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
 }
 
 button:hover {
@@ -55,6 +62,12 @@ button:focus {
 button i {
   margin: auto;
   font-size: 16px;
+}
+
+#drop-btn {
+  width: 100px;
+  border-radius: 10px;
+  margin-left: 20px;
 }
 
 /* button .emoji {
