@@ -94,13 +94,14 @@ let currentBack, currentFront;
 let nextBack, nextFront;
 
 let gifTimeInterval = 4000; // milliseconds
+let interval; // variabloe to store window.setInterval function
 
 //
 //--- FUNCTIONS ---//
 
-function startGifs() {
+function initialize() {
   changeGifs();
-  window.setInterval(changeGifs, gifTimeInterval);
+  interval = window.setInterval(changeGifs, gifTimeInterval);
 }
 
 function changeGifs() {
@@ -161,5 +162,11 @@ function toggleOverlay() {
   }
 }
 
-window.onload = startGifs();
-document.querySelector("main").addEventListener('click', changeGifs);
+window.onload = initialize();
+
+document.querySelector("main").addEventListener('click', function() {
+  changeGifs();
+
+  window.clearInterval(interval);
+  interval = window.setInterval(changeGifs, gifTimeInterval);
+});
