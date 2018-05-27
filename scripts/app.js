@@ -79,13 +79,33 @@ const backGifsClassic = [
 ];
 
 const frontGifsReloaded = [
+  'alien.gif',
+  'antler.gif',
+  'dancing-lady.gif',
+  'disco.gif',
+  'ditto.gif',
+  'icecream.gif',
+  'lacroix.gif',
+  'lava.gif',
+  'ok-hand.gif',
+  'palm-tree.gif',
+  'pillar.gif',
+  'prism.gif',
+  'rainbow-squiggle.gif',
+  'rotating-hand.gif',
+  'skull.gif',
   'thinking-rotate.gif',
-  'thinking-rotate.gif'
+  'urchin.gif',
+  'wavy-cup.gif',
+  'wavywave.gif',
+  'windows.gif'
 ];
 
 const backGifsReloaded = [
   'thinking-fidget.gif',
-  'thinking-fidget.gif'
+  'ipod-classic.gif',
+  'flash-drive.gif',
+  'dolphin.gif'
 ];
 
 let overlayShown = false;
