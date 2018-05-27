@@ -1,5 +1,8 @@
+//
+//
 //--- VARIABLES ---//
 
+// gif arrays generated with helpers, transpile later.
 const frontGifsClassic = [ '14_4.gif',
   '40oz.gif',
   'bike.gif',
@@ -75,12 +78,22 @@ const backGifsClassic = [
   'xp.gif'
 ];
 
+const frontGifsReloaded = [
+  'thinking-rotate.gif',
+  'thinking-rotate.gif'
+];
+
+const backGifsReloaded = [
+  'thinking-fidget.gif',
+  'thinking-fidget.gif'
+];
+
 let overlayShown = false;
 let gifSetting = "classic";
 let [frontGifs, backGifs] = [frontGifsClassic, backGifsClassic];
 
-const frontLength = frontGifs.length;
-const backLength = backGifs.length;
+let frontLength = frontGifs.length;
+let backLength = backGifs.length;
 
 const back = document.getElementById('back-asset');
 const front = document.getElementById('front-asset');
@@ -89,6 +102,10 @@ const playBtn = document.getElementById('play-btn');
 const muteBtn = document.getElementById('mute-btn');
 const infoBtn = document.getElementById('info-btn');
 const overlay = document.getElementById('info');
+const classicBtn = document.getElementById('classic-btn');
+const reloadedBtn = document.getElementById('reloaded-btn');
+const errthangBtn = document.getElementById('errthang-btn');
+const gifSettingBtns = document.querySelectorAll('.gifSettingBtn');
 
 let currentBack, currentFront;
 let nextBack, nextFront;
@@ -97,10 +114,17 @@ let gifTimeInterval = 4000; // milliseconds
 let interval; // variabloe to store window.setInterval function
 
 //
+//
 //--- FUNCTIONS ---//
 
 function initialize() {
   changeGifs();
+  interval = window.setInterval(changeGifs, gifTimeInterval);
+}
+
+function resetGifs() {
+  changeGifs();
+  window.clearInterval(interval);
   interval = window.setInterval(changeGifs, gifTimeInterval);
 }
 
@@ -120,7 +144,7 @@ function changeGifs() {
   if (gifSetting !== "errthang") {
     displaySingleSetting();
   } else {
-    displayDualSetting(nextBack, nextFront);
+    // displayDualSetting(nextBack, nextFront);
   }
 }
 
@@ -129,9 +153,9 @@ function displaySingleSetting() {
   front.style.backgroundImage = `url("./assets/front-${gifSetting}/${frontGifs[nextFront]}")`;
 }
 
-function displayDualSetting(displayBack, displayFront) {
-
-}
+// function displayDualSetting(displayBack, displayFront) {
+//
+// }
 
 function pauseAudio() {
   audio.pause();
@@ -151,7 +175,7 @@ function playAudio() {
 }
 
 function toggleOverlay() {
-  if (overlayShown == false) {
+  if (overlayShown === false) {
     overlayShown = true;
     infoBtn.innerHTML = "<i class='fas fa-times'></i>";
     overlay.style.display = "block";
@@ -162,11 +186,41 @@ function toggleOverlay() {
   }
 }
 
+function handleGifButtonColor(type) {
+
+  let upcasedType = type.charAt(0).toUpperCase() + type.slice(1);
+
+  gifSettingBtns.forEach(btn => {
+    if (btn.innerHTML === upcasedType) {
+      btn.style.backgroundColor = "yellow";
+    } else {
+      btn.style.backgroundColor = "white";
+    }
+  });
+}
+
+function toggleGifSettings(type) {
+  gifSetting = type;
+
+  if (type === "classic") {
+    frontGifs = frontGifsClassic;
+    backGifs = backGifsClassic;
+  } else if (type === "reloaded") {
+    frontGifs = frontGifsReloaded;
+    backGifs = backGifsReloaded;
+  } else if (type === "errthang") {
+
+  }
+
+  handleGifButtonColor(type);
+  [frontLength, backLength] = [frontGifs.length, backGifs.length];
+  resetGifs();
+  toggleOverlay();
+}
+
+//
+//
+//--- INITIALIZE & HANDLE CLICKS ----//
+document.querySelector("main").addEventListener('click', resetGifs);
+
 window.onload = initialize();
-
-document.querySelector("main").addEventListener('click', function() {
-  changeGifs();
-
-  window.clearInterval(interval);
-  interval = window.setInterval(changeGifs, gifTimeInterval);
-});

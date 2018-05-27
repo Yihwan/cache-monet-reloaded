@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700');
 
-body {
+main {
   cursor: pointer;
 }
 
@@ -64,15 +64,24 @@ button i {
   font-size: 16px;
 }
 
+.gifSettingBtn {
+  padding: 7px 12px;
+  border-radius: 1px;
+  font-family: 'IBM Plex Sans', sans-sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: white;
+}
+
+#classic-btn {
+  background-color: yellow;
+}
+
 #drop-btn {
   width: 100px;
   border-radius: 10px;
   margin-left: 20px;
 }
-
-/* button .emoji {
-  font-size: 20px;
-} */
 
 #play-btn {
   background-color: yellow;
@@ -145,8 +154,9 @@ button i {
 
 #info #info-text {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
+  line-height: 1.15em;
 
   position: absolute;
   top: 50%;
