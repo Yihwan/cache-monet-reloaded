@@ -1,17 +1,19 @@
 const fs = require('fs');
-const backFiles = './assets/back/';
-const frontFiles = './assets/front/';
+const backFilesClassic = './assets/back-classic/';
+const frontFilesClassic = './assets/front-classic/';
+const backFilesReloaded = './assets/back-reloaded/';
+const frontFilesReloaded = './assets/front-reloaded/';
 
 const backFilesArray = [];
 const frontFilesArray = [];
 
-fs.readdirSync(backFiles).forEach((file) => {
+fs.readdirSync(backFilesClassic).forEach((file) => {
   if (file !== '.DS_Store') {
     backFilesArray.push(file);
   }
 });
 
-fs.readdirSync(frontFiles).forEach(file => {
+fs.readdirSync(frontFilesClassic).forEach(file => {
   if (file !== '.DS_Store') {
     frontFilesArray.push(file);
   }
