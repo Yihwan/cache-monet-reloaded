@@ -8,6 +8,10 @@ header {
   float: right;
 }
 
+a {
+  text-decoration: none;
+}
+
 #logo {
   max-width: 370px;
 }
