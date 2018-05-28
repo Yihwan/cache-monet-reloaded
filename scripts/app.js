@@ -110,7 +110,7 @@ const frontGifsReloaded = [ 'alien.gif',
   'wavywave.gif',
   'work-life-balance.gif' ];
 
-const backGifsReloaded = [ 'aloe.gif',
+const backGifsReloaded = [ 
   'black-cat.gif',
   'ca-flag.gif',
   'ok-hand.gif',
