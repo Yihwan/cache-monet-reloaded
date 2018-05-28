@@ -189,7 +189,7 @@ function changeGifs() {
   if (gifSetting !== "errthang") {
     displaySingleSetting();
   } else {
-    // displayDualSetting(nextBack, nextFront);
+    displayDualSetting(nextBack, nextFront);
   }
 }
 
@@ -198,9 +198,20 @@ function displaySingleSetting() {
   front.style.backgroundImage = `url("./assets/front-${gifSetting}/${frontGifs[nextFront]}")`;
 }
 
-// function displayDualSetting(displayBack, displayFront) {
-//
-// }
+function displayDualSetting(displayBack, displayFront) {
+
+  if (backGifsClassic.includes(backGifs[displayBack])) {
+  back.style.backgroundImage = `url("./assets/back-classic/${backGifs[nextBack]}")`;
+  } else {
+  back.style.backgroundImage = `url("./assets/back-reloaded/${backGifs[nextBack]}")`;
+  }
+
+  if (frontGifsClassic.includes(frontGifs[displayFront])) {
+  front.style.backgroundImage = `url("./assets/front-classic/${frontGifs[nextFront]}")`;
+  } else {
+  front.style.backgroundImage = `url("./assets/front-reloaded/${frontGifs[nextFront]}")`;
+  }
+}
 
 function pauseAudio() {
   audio.pause();
@@ -254,7 +265,8 @@ function toggleGifSettings(type) {
     frontGifs = frontGifsReloaded;
     backGifs = backGifsReloaded;
   } else if (type === "errthang") {
-
+    frontGifs = frontGifsClassic.concat(frontGifsReloaded);
+    backGifs =backGifsClassic.concat(backGifsReloaded);
   }
 
   handleGifButtonColor(type);
