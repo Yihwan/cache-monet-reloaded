@@ -8,6 +8,10 @@ header {
   float: right;
 }
 
+#logo {
+  max-width: 370px;
+}
+
 #back-asset {
   background-repeat: round;
   width: 100vw;
