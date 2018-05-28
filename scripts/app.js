@@ -128,7 +128,6 @@ const backGifsReloaded = [ 'aloe.gif',
   'pies.gif',
   'rolly-polly.gif',
   'rotating-cubes.gif',
-  'see-hotdog.gif',
   'spin-spin.gif',
   'thinking-fidget.gif',
   'trippy.gif' ];
@@ -279,5 +278,4 @@ function toggleGifSettings(type) {
 //
 //--- INITIALIZE & HANDLE CLICKS ----//
 document.querySelector("main").addEventListener('click', resetGifs);
-
 window.onload = initialize();
