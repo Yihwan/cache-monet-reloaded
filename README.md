@@ -1,3 +1,3 @@
-# [mysteries of the universe](https://yihwan.github.io/cache-monet-reloaded/)
+# [mysteries of the universe](http://cachemonetreloaded.com)
 
 perpetually under construction
